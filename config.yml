@@ -1,0 +1,274 @@
+worldborder:
+  location:
+    center:
+      xPos: 0 #센터 X값
+      zPos: 0 #센터 Z값
+    size:
+      10_Player: 30 # 0 ~ 10 플레이어 경기장 크기
+      50_Player: 50 # 11 ~ 50 플레이어 경기장 크기
+      100_Player: 100 # 51 ~ 100 플레이어 경기장 크기
+      pvpTime: 10000 # pvp 시작 까지의 마진 (1000ms = 1s)
+      blockTime: 10800000 # 시즌 종료 전 특정 시간 내에 퇴장시 기권처리
+      minPlayer: 10
+      minTime: 10000
+  damage:
+    amount: 1 # 데미지 량
+    tick: 20 # 20tick = 1000ms
+  warning:
+    distance: 5 # WorldBorder Distance
+    time: 5 # WorldBorder Time (20tick = 1000ms)
+  world: 'test' # 하드코어로 설정된 월드
+  leave: 45000 # pvp 기권 시간 Default:45s (1000ms = 1s)
+  last: 64800000 # 마지막 접속 기권 시간 Default:18h (1000ms = 1s)
+  lastTime: 1000 # 유저가 14시간만에 서버를 접속하게되면
+  lastPercent: 0.50 # 오프라인이였던 시간의 50%를 플레이로 채워야합니다
+  lastLimit: 86400000 # (제한기간은 1일)
+
+airdrop:
+  inventoryName: '에어드랍'
+  settingInventoryName: '에어드랍설정'
+  brodcastMessage: '<PLAYER>가 처음으로 보급품을 열었습니다.'
+  message:
+    player_not: '플레이어만 명령어 입력이 가능합니다.'
+    prefix: '§4[§f보급§4]'
+    info:
+      - '/보급품설정 자동투하 <시간 (초)> <개수> <연속허용 T/F>'
+      - '/보급품설정 페이지 <페이지 넘버> - 중간에 빈 페이지가 있을경우 빈 상자를 떨어뜨리게 됩니다.'
+      - '/보급품설정 투하 - 임의의 위치에 강제로 보금품을 투하합니다. (PVP 유무 상관없이 강제투하)'
+    page:
+      sucess: '보급품 설정 인벤토리를 엽니다.'
+      foramt: '숫자만 입력해주세요.'
+      error: '인수를 정확히 입력해주세요.'
+    auto:
+      sucess: '자동투하를 설정했습니다.'
+      format: '값을 제대로 입력했는지 확인해주세요.'
+      error: '인수를 정확히 입력해주세요'
+    force:
+      message: '강제로 보급품을 투하하였습니다.'
+
+# 인게임 메시지에서는 각각 Prefix를 설정해주세요
+IngameMessage:
+  Kill: '킬 보상'
+  KillingSpree: '연속 킬 보상 <MONEY>'
+  KillRewards: '목표 킬 달성 보상 <MONEY>'
+  FirstBlood: '퍼스트블러드 보상 <MONEY>'
+  ConsecutiveWin: '연속 1등 보상 <MONEY>'
+  First: '1등 보상 <MONEY>'
+  Second: '2등 보상 <MONEY>'
+  Third: '3등 보상 <MONEY>'
+  Supply: '보급 보상 <MONEY>'
+  Result: '총 받는 금액: <MONEY>'
+  
+  FirstWinner: '1등 플레이어: <PLAYER>'
+  SecondWinner: '2등 플레이어: <PLAYER>'
+  ThirdWinner: '3등 플레이어: <PLAYER>'
+  
+  MinimumPlayer: '최소 인원수가 충족되지 않았으므로 <TIME>초간 더 대기합니다.'
+  PVPStart: 'PVP가 시작되었습니다.'
+  PVPCount: '<TIME>초 후에 PVP가 시작됩니다.'
+  BorderEnd: '자기장이 소멸되었습니다.'
+  BorderCount: '<TIME>초 후에 PVP가 시작됩니다.'
+  
+BossBar:
+  BarColor: 'BLUE'
+  BarStyle: 'SEGMENTED_10'
+  BarFlag: #Flag Nullable
+#    - 'DARKEN_SKY'
+  message:
+    finish: '자기장 소멸까지 남은 시간: <DAY>일 <HOUR>시 <MINUTE>분 <SECOND>초'
+    pvp: 'PVP 시작까지 남은 시간: <DAY>일 <HOUR>시 <MINUTE>분 <SECOND>초'
+    end: '자기장이 소멸되었습니다.'
+    
+prefix:
+  sucess: '§4[§f칭호§4]성공적으로 칭호를 추가했습니다.'
+  failed: '§4[§f칭호§4]이미 있는 칭호가 있습니다.'
+  chat:
+    Ingame: '§4[§f야생§4]' # 인게임 접두사
+    Lobby: '' # 로비 접두사
+    distance: 15 # 채팅 범위
+  itemCode: 403
+  displayName: '<PREFIX> 칭호북'
+  lore:
+    - '칭호: <PREFIX>'
+    - '사용 가능 월드: <WORLD>' # 인게임, 로비, 모든 월드
+# 1차 아이템 코드 검사, 2차 Lore를 이용해 데이터 파싱
+# 위 Lore 두 줄은 절대 건들지 말 것
+
+prefixMessage:
+  player_not: '플레이어만 명령어 입력이 가능합니다.'
+  
+  user:
+    prefix: '§4[§f칭호§4]'
+    info:
+      - '/칭호 - 명령어 목록을 봅니다.'
+      - '/칭호 설정 <ID> - 칭호를 설정합니다.'
+      - '/칭호 목록 - 보유한 칭호를 확인합니다.'
+    set:
+      sucess: '해당 칭호로 설정하였습니다.'
+      empty: '존재하지 않는 칭호입니다.'
+      format: '숫자만 입력해주세요'
+      error: '설정에 실패했습니다. 인수를 전부 입력해주세요.'
+    list:
+      message: '<ID>. 칭호: <PREFIX>, 사용 가능 월드: <WORLD>'
+  op:
+    prefix: '§4[§f칭호§4]'
+    info:
+      - '/칭호관리 - 명령어 목록을 봅니다.'
+      - '/칭호관리 생성  <칭호> <1/2/3> - 칭호를 생성합니다. 1 == Only Ingame, 2 == Only Lobby, 3 == Both'
+    create:
+      sucess: '칭호를 생성했습니다.'
+      failed: '칭호를 생성에 실패했습니다. 인벤토리에 빈 공간이 있는지 확인해주세요.'
+      format: '숫자만 입력해주세요.'
+      error: '생성에 실패했습니다. 인수를 전부 입력해주세요.'
+
+message:
+  player_not: '플레이어만 명령어 입력이 가능합니다.'
+  
+  user:
+    prefix: '§4[§f야생§4]'
+    info:
+      - '/하드코어 - 명령어 목록을 봅니다.'
+      - '/하드코어 입장 - 하드코어 월드에 입장합니다.'
+      - '/하드코어 시즌확인 - 하드코어 월드 시즌을 확인합니다.'
+      - '/하드코어 밴목록 - 하드코어 월드 밴 목록을 확인합니다.'
+      - '/하드코어 기권 - 하드코어 월드에서 기권 합니다.'
+    join:
+      ready: '아직 시즌이 시작되지 않았습니다.'
+      already: '이미 하드코어 월드에 접속되어 있습니다.'
+      ban: '하드코어 월드에서 밴 당했습니다.'
+      pvp: 'PVP 기간이기 때문에 접속할 수 없습니다.'
+      max: '최대 인원수가 접속중입니다.'
+      sucess: '하드코어 월드에 접속 했습니다.'
+    check:
+      currentSeason: '현재 시즌: <SEASON>'
+      remainingTime: '초기화 예정 시각: <DATE>' #서버의 리붓 시간에 따라 달라 달라짐
+    banList:
+      message: '<Player>' # 이 부분은 가독성을 위해 수정될 예정 (미작성)
+    surrender:
+      message: '하드코어 월드에서 기권했습니다.'
+      error: '하드코어 월드에 접속되어 있지 않습니다.'
+  op:
+    prefix: '§4[§f야생§4]'
+    info:
+      - '/하드코어설정 - 명령어를 봅니다.'
+      - '/하드코어설정 초기화 <일> <시> <분> <초> - 초기화 날짜를 지정합니다.'
+      - '/하드코어설정 지정 <월드 이름> - 하드코어 월드를 지정합니다.'
+      - '/하드코어설정 리셋 - 하드코어 월드를 초기화 시킵니다.'
+      - '/하드코어설정 저장 - 콘피그를 저장합니다.'
+      - '/하드코어설정 리로드 - 콘피그를 리로드합니다.'
+      - '/하드코어설정 스폰 <TRUE/FALSE> - 크리쳐 스폰 설정을 바꿉니다.'
+      - '/하드코어설정 언밴 <NAME> - 밴을 해제합니다.'
+      - '/하드코어설정 청크로드 - 수동으로 청크를 로드합니다. (아웃오브메모리 유의)'
+      - '/하드코어설정 청크언로드 <TRUE/FALSE> - 청크 로드 이벤트를 캔슬을 설정합니다.'
+    init:
+      message: '초기화를 완료했습니다.'
+      minimum: 'timeMargin 값보다 크게 설정해주세요.'
+      format: '초기화에 실패했습니다. 숫자만 입력해주세요'
+      error: '초기화에 실패했습니다. 인수를 전부 입력해주세요.'
+    select:
+      message: '월드 지정을 완료했습니다.'
+      none: '월드 지정에 실패했습니다. 존재하지 않는 월드입니다.'
+      error: '월드 지정에 실패했습니다. 인수를 전부 입력해주세요.'
+    reset:
+      message: '월드 리셋을 완료했습니다.'
+    save:
+      message: '콘피그를 저장했습니다.'
+    reload:
+      message: '콘피그를 리로드 했습니다.'
+    spawn:
+      message: '스폰 설정을 <BOOL> 값으로 변경했습니다.'
+      error: '스폰 설정에 실패했습니다. 인수를 전부 입력해주세요'
+      
+# 일부 연산은 반올림  처리됨
+Calc:
+  #배율
+  damageReceive: 1.0 # getDamage() * 1.0F
+  damageAttack: 1.0 # getDamage() * 1.0F
+  hungrySpeed: 4.0 # VanliaDefault: 4.0F
+  xpReceive: 1.0 # getXp() * 1.0F
+
+  Attack:
+    AddPlayerDamage: 0.24
+    AddCreatureDamage: 0.12
+    AddProjectileDamage: 0.12
+  Resistance:
+    DamageReduction: 0.10
+    ProjectileDamageReduction: 0.20
+    AddHealth: 5.0
+  Evasion:
+    AddSpeed: 0.15
+    SprintEvasionPercent: 0.50
+    SprintEvasionTime: 10000
+  Lucky:
+    IFAttackCount: 2
+    AddDamagePercent: 0.50
+    AddDamageValue: 0.2
+    ArmorDamageReduction: 0.2
+
+  Money:
+    First: 1000
+    Second: 500
+    Third: 300
+    FirstBlood: 200
+    Kill: 100
+    KillingSpree: 30
+    Supply: 500 # 아직 보급 기능 미추가
+    ConsecutiveWin: 1000
+
+    KillRewards: # 킬(Int):돈(Double)
+      - 15:100
+      - 20:300
+
+Inventory:
+  name: '하드코어 입장'
+  
+  # 0~9 Slots
+  attackSlot: 0
+  resistanceSlot: 1
+  evasionSlot: 2
+  luckySlot: 3
+  
+  itemStack_1:
+    ==: org.bukkit.inventory.ItemStack
+    type: APPLE
+    amount: 1
+    meta:
+      ==: ItemMeta
+      meta-type: UNSPECIFIC
+      display-name: 'Attack 어빌리티'
+      loc-name: 'Attack 어빌리티'
+      lore:
+      - 'Attack'
+  itemStack_2:
+    ==: org.bukkit.inventory.ItemStack
+    type: APPLE
+    amount: 1
+    meta:
+      ==: ItemMeta
+      meta-type: UNSPECIFIC
+      display-name: 'Resistance 어빌리티'
+      loc-name: 'Resistance 어빌리티'
+      lore:
+      - 'Resistance'
+  itemStack_3:
+    ==: org.bukkit.inventory.ItemStack
+    type: APPLE
+    amount: 1
+    meta:
+      ==: ItemMeta
+      meta-type: UNSPECIFIC
+      display-name: 'Evasion 어빌리티'
+      loc-name: 'Evasion 어빌리티'
+      lore:
+      - 'Evasion'
+  itemStack_4:
+    ==: org.bukkit.inventory.ItemStack
+    type: APPLE
+    amount: 1
+    meta:
+      ==: ItemMeta
+      meta-type: UNSPECIFIC
+      display-name: 'Lucky 어빌리티'
+      loc-name: 'Lucky 어빌리티'
+      lore:
+      - 'Lucky'

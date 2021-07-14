@@ -1,0 +1,17 @@
+name: Hardcore
+main: com.gmail.ed3v8vl0.HardcoreSurvival.HardcoreSurvival
+version: 1.2b
+author: ed3v8vl0
+depend: [Vault, WorldEdit]
+
+commands:
+   하드코어:
+      permission: hardcore.user
+   하드코어설정:
+      permission: hardcore.op
+   보급품설정:
+      permission: hardcore.supplyOp
+   칭호:
+      permission: hardcore.prefix
+   칭호관리:
+      permission: hardcore.prefixOp

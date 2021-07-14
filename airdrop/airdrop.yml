@@ -1,0 +1,89 @@
+schematic: './plugins/Hardcore/airdrop/airdrop.schematic'
+
+# Particle
+particle: REDSTONE
+xPos: 0
+yPos: 5
+zPos: 0
+offsetX: 0
+offsetY: 0
+offsetZ: 10
+amount: 0
+
+# Velocity
+BaseValue: 0.0 # 0.1당 5블록
+AddVelocity: 0.09 # ((255 - Highest Block) / 5) * 0.1
+
+# AirDrop
+spawnPos: 230 #yPos
+title: '보급이 투하되었습니다.'
+message: 'X: <posX>, Y: <posY>, Z: <posZ>'
+subTitle: 'X: <posX>, Y: <posY>, Z: <posZ>'
+fadeIn: 10
+stay: 30
+fadeOut: 10
+
+Items:
+  itemCount: 5
+  
+  itemPercent_1: 0.5
+  itemPercent_2: 0.5
+  itemPercent_3: 0.5
+  itemPercent_4: 0.5
+  itemPercent_5: 0.5
+  
+  itemStack_1:
+    ==: org.bukkit.inventory.ItemStack
+    type: APPLE
+    amount: 1
+    meta:
+      ==: ItemMeta
+      meta-type: UNSPECIFIC
+      display-name: 'Attack 어빌리티'
+      loc-name: 'Attack 어빌리티'
+      lore:
+      - 'Attack'
+  itemStack_2:
+    ==: org.bukkit.inventory.ItemStack
+    type: APPLE
+    amount: 1
+    meta:
+      ==: ItemMeta
+      meta-type: UNSPECIFIC
+      display-name: 'Resistance 어빌리티'
+      loc-name: 'Resistance 어빌리티'
+      lore:
+      - 'Resistance'
+  itemStack_3:
+    ==: org.bukkit.inventory.ItemStack
+    type: APPLE
+    amount: 1
+    meta:
+      ==: ItemMeta
+      meta-type: UNSPECIFIC
+      display-name: 'Evasion 어빌리티'
+      loc-name: 'Evasion 어빌리티'
+      lore:
+      - 'Evasion'
+  itemStack_4:
+    ==: org.bukkit.inventory.ItemStack
+    type: APPLE
+    amount: 1
+    meta:
+      ==: ItemMeta
+      meta-type: UNSPECIFIC
+      display-name: 'Lucky 어빌리티'
+      loc-name: 'Lucky 어빌리티'
+      lore:
+      - 'Lucky'
+  itemStack_5:
+    ==: org.bukkit.inventory.ItemStack
+    type: APPLE
+    amount: 1
+    meta:
+      ==: ItemMeta
+      meta-type: UNSPECIFIC
+      display-name: 'Lucky 어빌리티'
+      loc-name: 'Lucky 어빌리티'
+      lore:
+      - 'Lucky'
